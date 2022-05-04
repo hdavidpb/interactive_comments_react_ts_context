@@ -1,3 +1,4 @@
+import { commentsContext } from "./context/CommentsContext";
 import InteractiveComments from "./pages/interactiveComments/InteractiveComments";
 
 function App() {

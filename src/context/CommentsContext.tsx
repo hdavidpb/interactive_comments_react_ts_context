@@ -1,20 +1,30 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
+import { IContextState, IPropsCommentsContext } from "./interfaces";
 
-interface IComments {
-  id: number;
-  user: string;
-  image: string;
-  description: string;
-  points: number;
-  replys: IComments[];
-}
+const initialState: IContextState = {
+  comments: [],
+};
+export const commentsContext = createContext(initialState);
 
-interface IContextState {
-  comments: IComments[];
-}
+const CommentsContext = ({ children }: IPropsCommentsContext) => {
+  const [commentsState, setCommentsState] = useState<IContextState>({
+    comments: [
+      {
+        description: "hola mundo",
+        id: 1,
+        image: "nada.jpg",
+        points: 4,
+        user: "hdavidpb",
+        replys: [],
+      },
+    ],
+  });
 
-const CommentsContext = () => {
-  return <div>CommentsContext</div>;
+  return (
+    <commentsContext.Provider value={commentsState}>
+      {children}
+    </commentsContext.Provider>
+  );
 };
 
 export default CommentsContext;
