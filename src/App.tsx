@@ -1,11 +1,12 @@
 import { commentsContext } from "./context/CommentsContext";
+import { AppContainer } from "./globlasStyles";
 import InteractiveComments from "./pages/interactiveComments/InteractiveComments";
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer>
       <InteractiveComments />
-    </div>
+    </AppContainer>
   );
 }
 
