@@ -155,3 +155,47 @@ export const ReplysContainer = styled.div`
   gap: 10px;
   border-left: solid 4px ${theme.neutral.LightGray};
 `;
+
+export const ElementContainer = styled.div`
+  height: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  & img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+`;
+
+export const TextArea = styled.textarea`
+  flex: 1;
+  height: 100px;
+  border-radius: 6px;
+  border: solid 1px ${theme.neutral.GrayishBlue};
+  padding: 6px;
+  text-align: left;
+  transition: all 0.4s;
+  outline: none;
+  resize: none;
+
+  &:focus {
+    border: solid 1px ${theme.primary.ModerateBlue};
+  }
+`;
+
+export const ButtonForm = styled.button`
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px 5px 15px;
+  background: ${theme.primary.ModerateBlue};
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+`;

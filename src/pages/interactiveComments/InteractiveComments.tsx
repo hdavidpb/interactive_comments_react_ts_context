@@ -1,4 +1,7 @@
 import { useContext } from "react";
+import CommentOrReplyForm, {
+  formType,
+} from "../../components/commentsPage/CommentOrReplyForm";
 import CommentsTable from "../../components/commentsPage/CommentsTable";
 import Replys from "../../components/commentsPage/Replys";
 import { commentsContext } from "../../context/CommentsContext";
@@ -10,8 +13,10 @@ const InteractiveComments = () => {
   return (
     <ContainerPage>
       <CommentsTable />
+      <CommentOrReplyForm type={formType.replyForm} />
       <CommentsTable />
       <Replys />
+      <CommentOrReplyForm type={formType.commentFrom} />
     </ContainerPage>
   );
 };
