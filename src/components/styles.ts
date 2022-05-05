@@ -218,5 +218,6 @@ export const ButtonForm = styled.button`
 
   &:hover {
     transform: scale(1.1);
+    opacity: 0.5;
   }
 `;

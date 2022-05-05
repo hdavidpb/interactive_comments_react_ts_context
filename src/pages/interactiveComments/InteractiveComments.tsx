@@ -19,6 +19,7 @@ const InteractiveComments = () => {
             {comment.isReplaying && (
               <CommentOrReplyForm type={formType.replyForm} />
             )}
+
             {comment.replys.map((reply) => (
               <Replys key={reply.id} comment={reply} />
             ))}

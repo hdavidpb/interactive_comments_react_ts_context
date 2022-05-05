@@ -1,7 +1,7 @@
+import dayjs from "dayjs";
 import { useContext } from "react";
 import { commentsContext } from "../../context/CommentsContext";
 import { IComments } from "../../context/interfaces";
-
 import { usersContext } from "../../context/UsersContext";
 import useSimpleForm from "../../hooks/useSimpleForm";
 import * as SC from "../styles";
@@ -33,7 +33,7 @@ const CommentOrReplyForm = ({ type, marginRight }: IProps) => {
       case formType.commentFrom:
         const newComment: IComments = {
           id: Date.now(),
-          date: new Date().toISOString(),
+          date: dayjs(new Date()).format("DD-MM-YYYY"),
           description: formValues.textArea,
           image: user?.image,
           points: 0,
@@ -49,7 +49,7 @@ const CommentOrReplyForm = ({ type, marginRight }: IProps) => {
       case formType.replyForm:
         const newReplyComment: IComments = {
           id: Date.now(),
-          date: new Date().toISOString(),
+          date: dayjs(new Date()).format("DD-MM-YYYY"),
           description: formValues.textArea,
           image: user?.image,
           points: 0,
@@ -80,6 +80,7 @@ const CommentOrReplyForm = ({ type, marginRight }: IProps) => {
         name="textArea"
         value={formValues.textArea}
         onChange={(e) => handleFormValues(e)}
+        placeholder="Add a comment..."
       />
       <SC.ElementContainer>
         <SC.ButtonForm type="submit">{type}</SC.ButtonForm>
