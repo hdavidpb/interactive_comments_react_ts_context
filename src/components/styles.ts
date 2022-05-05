@@ -13,12 +13,11 @@ export const CommentsContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 6px;
-  flex: 1;
-  overflow-y: auto;
+
   margin-right: ${({ marginRight }: IProps) => (marginRight ? "-12%" : "")};
 `;
 
-export const CardComment = styled.div`
+export const CardComment = styled.form`
   width: ${({ width }: IProps) => width};
   display: flex;
   justify-content: center;
@@ -27,10 +26,12 @@ export const CardComment = styled.div`
   padding: 12px;
   border-radius: 6px;
   background: #ffffff;
+  margin-right: ${({ marginRight }: IProps) => (marginRight ? "-13%" : "")};
 `;
 
 export const PointsContainer = styled.div`
-  height: 100%;
+  margin-bottom: auto;
+  height: 60%;
 
   display: flex;
   flex-direction: column;
@@ -113,6 +114,7 @@ export const ReplyBtnContainer = styled.div`
   align-items: center;
   gap: 6px;
   cursor: pointer;
+  transition: all 0.4s;
 
   & img {
     width: 15px;
@@ -124,9 +126,13 @@ export const ReplyBtnContainer = styled.div`
     color: ${theme.primary.ModerateBlue};
     font-weight: 900;
   }
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
-export const DescriptionContainer = styled.p`
+export const DescriptionContainer = styled.textarea`
   width: 100%;
   height: 100px;
   word-break: break-word;
@@ -134,6 +140,15 @@ export const DescriptionContainer = styled.p`
   color: ${theme.neutral.GrayishBlue};
   font-size: 0.9rem;
   text-align: left;
+  padding: 6px;
+  border: none;
+  outline: none;
+  resize: none;
+
+  :disabled {
+    background: #ffffff;
+  }
+
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -196,6 +211,12 @@ export const ButtonForm = styled.button`
   background: ${theme.primary.ModerateBlue};
   color: #ffffff;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
+  font-weight: 900;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;

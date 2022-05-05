@@ -7,9 +7,20 @@ export interface IComments {
   image: string;
   description: string;
   points: number;
+  date: string;
+  isComment: boolean;
+  isReplaying: boolean;
   replys: IComments[];
 }
 
 export interface IContextState {
   comments: IComments[];
+}
+
+export interface IUserContextState {
+  user: IUser | null;
+}
+export interface IUser {
+  nickname: string;
+  image: any;
 }

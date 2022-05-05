@@ -1,11 +1,20 @@
 import React from "react";
+import { IComments } from "../../context/interfaces";
 import * as SC from "../styles";
+import CommentOrReplyForm, { formType } from "./CommentOrReplyForm";
 import CommentsTable from "./CommentsTable";
-const Replys = () => {
+
+interface IProps {
+  comment: IComments;
+}
+
+const Replys = ({ comment }: IProps) => {
   return (
     <SC.ReplysContainer width="90%">
-      <CommentsTable marginRight={true} />
-      <CommentsTable marginRight={true} />
+      <CommentsTable comment={comment} marginRight={true} />
+      {comment.isReplaying && (
+        <CommentOrReplyForm marginRight={true} type={formType.replyForm} />
+      )}
     </SC.ReplysContainer>
   );
 };
